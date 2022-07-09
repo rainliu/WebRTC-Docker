@@ -7,13 +7,11 @@ Out-of-the-box docker images for AppRTC dev/test purpose.
 macOS host:
 
 ``` bash
-sudo docker build apprtc-server
-
-sudo docker run --rm \
+docker run --rm \
   -p 8080:8080 -p 8089:8089 -p 3478:3478 -p 3478:3478/udp -p 3033:3033 \
   -p 59000-65000:59000-65000/udp \
-  -e PUBLIC_IP=<server public IP> \
-  -it apprtc-server
+  -e PUBLIC_IP=127.0.0.1 \
+  -it piasy/apprtc-server:v1.6
 ```
 
 Linux host:
